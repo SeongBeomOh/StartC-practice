@@ -3,13 +3,15 @@
 int main() {
 START:
 	printf("메뉴를 선택하세요. \n");
-	printf("[A] 산술연산 (나눗셈) \n");
-	printf("[B] 비트 연산 (AND)\n");
-	printf("[Q] 프로그램 종료\n");
+	printf("\t[A] 산술연산 (나눗셈) \n");
+	printf("\t[B] 비트 연산 (AND)\n");
+	printf("\t[Q] 프로그램 종료\n");
 
 	char menu = 0;
-	int nInput1 = 0, nInput2 = 0, result = 0;
+	int nInput1 = 0, nInput2 = 0, bitResult = 0;
+	double result = 0;
 	menu = getchar();
+	getchar();
 
 	switch (menu)
 	{
@@ -22,7 +24,9 @@ START:
 			break;
 		}
 		else {
-			printf("%.2f", (float)(nInput1 / nInput2));
+			result = (double)nInput1 / nInput2;
+			printf("%.2f\n", result);
+			printf("%s입니다", (result >= 10.00 ? "10 이상" : " 10 미만"));
 			goto START;
 			break;
 		}
@@ -30,8 +34,8 @@ START:
 	case 'B' :
 	case 'b' :
 		scanf_s("%d%d%*c", &nInput1, &nInput2);
-		result = nInput1 & nInput2;
-		printf("두 정수 비트 AND값은 : %d, 메모리 크기는 각각 : %zu, %zu", result, sizeof(nInput1), sizeof(nInput2));
+		bitResult = nInput1 & nInput2;
+		printf("두 정수 비트 AND값은 : %d, 메모리 크기는 각각 : %zu, %zu", bitResult, sizeof(nInput1), sizeof(nInput2));
 		goto START;
 		break;
 
