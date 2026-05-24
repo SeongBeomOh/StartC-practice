@@ -7,7 +7,7 @@ int main() {
 		scanf_s("%d", &nArray[i]);
 	}
 
-	for (int i = 0; i < sizeof(nArray)/sizeof(int); i++){
+	for (int i = 0; i < sizeof(nArray)/sizeof(int) -1; i++){
 		for (int j = i + 1; j < sizeof(nArray) / sizeof(int); j++) {
 			if (nArray[i] > nArray[j]) {
 				temp = nArray[i];
