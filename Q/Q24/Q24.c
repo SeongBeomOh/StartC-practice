@@ -1,3 +1,5 @@
+// 교차 배열 문제
+
 #include <stdio.h>
 
 int main() {
